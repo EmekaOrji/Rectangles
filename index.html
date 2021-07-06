@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rectangular Properties</title>
+</head>
+<body>
+  <button class="menu-button" id="menu-btn"><span class="unicode">&#8227</span></button>
+  <div class="sidebar-container tuckin">
+    <ul>
+      <li class="head">
+        <h2>RECTANGLE</h2>
+        <h6>(Properties)</h6  >
+      </li>
+      <li class="x" id="area">Area</li>
+      <li class="x" id="perimeter">Perimeter</li>
+      <li class="x" id="diagonal">Diagonal</li>
+    </ul>
+  </div>
+  <div class="x" id="area-container">
+    <h1 id="area-header" class="h1 active-head-a">Calculate the Area of a Rectangle</h1>
+    <label><p>LENGTH:</p> <input type="number" id="length-a"></label>
+    <label><p>BREADTH:</p> <input type="number" id="breadth-a"></label>
+    <div class="answer"><p class="answer-text">AREA: </p><p id="a-answer" class="answer-box"></p></div>
+  </div>
+  <div class="notactive x" id="perimeter-container">
+    <h1 id="perimeter-header" class="h1 active-head-p">Calculate the Perimeter of a Rectangle</h1>
+    <label><p>LENGTH:</p> <input type="number" id="length-p"></label>
+    <label><p>BREADTH:</p> <input type="number" id="breadth-p"></label>
+    <div class="answer"><p class="answer-text">PERIMETER: </p><p id="p-answer" class="answer-box"></p></div>
+  </div>
+  <div class="notactive x" id="diagonal-container">
+    <h1 id="diagonal-header" class="h1 active-head-d">Calculate the Diagonal of a Rectangle</h1>
+    <label><p>LENGTH:</p> <input type="number" id="length-d"></label>
+    <label><p>BREADTH:</p> <input type="number" id="breadth-d"></label>
+    <div class="answer"><p class="answer-text">DIAGONAL: </p><p id="d-answer" class="answer-box"></p></div>
+  </div>
+  <div class="fixed" id="fixedbg"></div>
+</body>
+</html>
