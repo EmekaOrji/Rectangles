@@ -1,15 +1,161 @@
 @import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
+.orange {
+  --masterBgColor: white;
+  --mainBgColor: #F76900;
+  --sidebarBodyBg: #f09d5e;
+  --listBgColor: #f1832f;
+  --listBgColorHover: var(--mainBgColor);
+  --activeListBgColor: var(--mainBgColor);
+  --dropIcon: #c95700;
+  --navBarFontColor: white;
+  --fontColor: #944000;
+}
+.green {
+  --masterBgColor: white;
+  --mainBgColor: darkgreen;
+  --sidebarBodyBg: #5fa75f;
+  --listBgColor: #3f973f;
+  --listBgColorHover: var(--mainBgColor);
+  --activeListBgColor: var(--mainBgColor);
+  --dropIcon: #005500;
+  --navBarFontColor: white;
+  --fontColor: #004700;
+}
+.yellow {
+  --masterBgColor: white;
+  --mainBgColor: #eea600;
+  --sidebarBodyBg: #e2b856;
+  --listBgColor: #d6a634;
+  --listBgColorHover: var(--mainBgColor);
+  --activeListBgColor: var(--mainBgColor);
+  --dropIcon: #d89700;
+  --navBarFontColor: white;
+  --fontColor: #a87600;
+}
+.blue {
+  --masterBgColor: white;
+  --mainBgColor: darkblue;
+  --sidebarBodyBg: #5d8ae9;
+  --listBgColor: #4377e7;
+  --listBgColorHover: var(--mainBgColor);
+  --activeListBgColor: var(--mainBgColor);
+  --dropIcon: midnightblue;
+  --navBarFontColor: white;
+  --fontColor: #131357;
+}
+.red {
+  --masterBgColor: white;
+  --mainBgColor: red;
+  --sidebarBodyBg: #ff7373;
+  --listBgColor: #ff4242;
+  --listBgColorHover: var(--mainBgColor);
+  --activeListBgColor: var(--mainBgColor);
+  --dropIcon: #dd0000;
+  --navBarFontColor: white;
+  --fontColor: #af0000;
+}
+.dark {
+  --masterBgColor: #5b6868;
+  --mainBgColor: #192929;
+  --sidebarBodyBg: #425050;
+  --listBgColor: #313d3d;
+  --listBgColorHover: var(--mainBgColor);
+  --activeListBgColor: var(--mainBgColor);
+  --dropIcon: #172525;
+  --navBarFontColor: #819191;
+  --fontColor: #101a1a;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 body {
+  background: var(--masterBgColor);
+  position: relative;
+  height: 100vh;
   text-align: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  z-index: -111;
 }
+.theme {
+  background: transparent;
+  color: var(--dropIcon);
+  width: 4%;
+  min-width: fit-content;
+  position: fixed;
+  top: 10%;
+  right: 10%;
+  border-radius: 30px;
+  transition: all 0.2s ease-in-out;
+  padding: 0.3% 0;
+  outline: none;
+}
+.theme:hover, .theme:focus {
+  padding-bottom: 0;
+  background: var(--dropIcon);
+  color: mintcream;
+}
+.theme span {
+  font-size: 2em;
+}
+ul.dropdown {
+  margin-top: 10%;
+  list-style-type: none;
+  display: flexbox;
+}
+li.list {
+  width: 100%;
+  height: 0;
+  transition: all 0.2s ease-in-out;
+  font-size: 0;
+  align-items: center;
+  user-select: none;
+  outline: none;
+}
+i {
+  margin: 0 auto;
+}
+li.list:last-child {
+  border-radius: 0 0 5px 5px;
+}
+li.list:hover, li.list:focus {
+  transform: scale(1.7);
+  border-radius: 5px;
+  border: 1px solid var(--dropIcon);
+  font-size: 0.5em;
+}
+.theme:hover li.list, .theme:focus li.list {
+  display: flex;
+  height: 30px;
+}
+#orange {
+  background: #F76900;
+}
+#green {
+  background: darkgreen;
+}
+#yellow {
+  background: #eea600;
+}
+#blue {
+  background: darkblue;
+}
+#red {
+  background: red;
+}
+#dark {
+  background: #192929;
+}
+/* #light {
+  background: purple;
+} */
+/* #freestyle {
+  background: ;
+} */
 button.menu-button {
-  background: #2661e2;
+  background: var(--mainBgColor);
   color: #ffffff;
   border: none;
   border-radius: 0 60px 60px 0;
@@ -30,12 +176,15 @@ button.menu-button:hover {
 }
 div.sidebar-container {
   width: 45%;
-  background: #5d8ae9;
+  background: var(--sidebarBodyBg);
   height: 100%;
   position: fixed;
   overflow: auto;
   cursor: default;
   transition: all 0.3s ease-in-out;
+  cursor: default;
+  user-select: none;
+  z-index: 100;
 }
 .tuckin {
   left: -45%;
@@ -43,38 +192,45 @@ div.sidebar-container {
 .tuckout {
   left: 0%;
 }
-ul {
+ul.nav-bar {
   list-style-type: none;
 }
 .head {
-  background: #1856db;
-  color: white;
+  background: var(--mainBgColor);
+  color: var(--navBarFontColor);
+  border-bottom: 1px solid white;
   padding: 30% 0;
 }
-li {
-  background: #4377e7;
-  color: white;
+li.x {
+  background: var(--listBgColor);
+  color: var(--navBarFontColor);
   padding: 10%;
   display: block;
 }
-li:hover {
-  background: #3168df;
+li.x:hover {
+  background: var(--listBgColorHover);
+  opacity: 0.6;
 }
-.active {
-  background: #235dda;
+li.x.active {
+  background: var(--activeListBgColor);
 }
 .notactive {
   display: none;
 }
 .h1 {
-  color: #2661e2;
+  color: var(--mainBgColor);
+}
+label {
+  color: var(--mainBgColor);
 }
 p {
   width: fit-content;
   margin: 0 auto;
 }
 input {
-  border: 2px solid #2661e2;
+  background: transparent;
+  color: var(--fontColor);
+  border: 2px solid var(--mainBgColor);
   border-radius: 10px;
   font-size: 3em;
   width: 7%;
@@ -90,26 +246,40 @@ input {
   transition: all 0.3s ease-in-out;
 }
 .answer-box {
+  color: var(--fontColor);
   padding: 0%;
-  border: 2px solid #2661e2;
+  border: 2px solid var(--mainBgColor);
   border-radius: 10px;
   font-size: 3em;
   width: fit-content;
   min-width: 7%;
   height: 60px;
   margin: 1% auto 2%;
-  transition: all 0.3s ease-in-out;
+  /* transition: all 0.3s ease-in-out; */
+}
+.clickTab {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 10%;
+  color: var(--mainBgColor);
+  opacity: 0.5;
+  cursor: default;
 }
 .fixed {
   background: transparent;
   width: 100%;
-  height: 1000px;
+  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -111;
+  z-index: -100;
 }
-@media screen and (max-width: 832px) {
+@media screen and (max-width: 802px) {
+  .theme {
+    width: 6%;
+  }
   input, .answer-box, #p-answer, #a-answer {
     height: 40px;
     font-size: 1.7em;
@@ -118,8 +288,24 @@ input {
   .answer {
     margin-top: 4%;
   }
+  .clickTab {
+    display: none;
+  }
+}
+@media screen and (max-width: 470px) {
+  .theme {
+    width: 10%;
+  }
+  button.menu-button {
+    font-size: 2em;
+    left: -8%;
+    width: 20%;
+  }
 }
 @media screen and (max-width: 330px) {
+  .theme {
+    width: 14%;
+  }
   input, .answer-box, #p-answer, #a-answer {
     min-width: 20%;
   }
@@ -135,10 +321,8 @@ input {
     font-size: 1.5em;
   }
 }
-@media screen and (max-width: 400px) {
-  button.menu-button {
-    font-size: 2em;
-    left: -8%;
-    width: 20%;
+@media screen and (max-height: 584px) {
+  .theme {
+    top: 15%;
   }
 }

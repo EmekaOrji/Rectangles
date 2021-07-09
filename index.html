@@ -6,12 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous"/>
   <title>Rectangular Properties</title>
 </head>
-<body>
+<body class="blue">
+  <div class="theme" tabindex="1">
+    <span><i class="fas fa-tint"></i></span>
+    <ul class="dropdown">
+      <li class="list" id="orange" tabindex="1"><i>Orange</i></li>
+      <li class="list" id="green" tabindex="1"><i>Green</i></li>
+      <li class="list" id="yellow" tabindex="1"><i>Yellow</i></li>
+      <li class="list" id="blue" tabindex="1"><i>Blue</i></li>
+      <li class="list" id="red" tabindex="1"><i>Red</i></li>
+      <li class="list" id="dark" tabindex="1"><i>Dark</i></li>
+      <!-- <li class="list" id="freestyle"></li> -->
+    </ul>
+  </div>
   <button class="menu-button" id="menu-btn"><span class="unicode">&#8227</span></button>
   <div class="sidebar-container tuckin">
-    <ul>
+    <ul class="nav-bar">
       <li class="head">
         <h2>RECTANGLE</h2>
         <h6>(Properties)</h6  >
@@ -39,6 +52,10 @@
     <label><p>BREADTH:</p> <input type="number" id="breadth-d"></label>
     <div class="answer"><p class="answer-text">DIAGONAL: </p><p id="d-answer" class="answer-box"></p></div>
   </div>
+
+  <div class="clickTab" id="clickTab">Click Tab Key Recursively</div>
   <div class="fixed" id="fixedbg"></div>
+
+  <script src="js/rectangle.js"></script>
 </body>
 </html>
