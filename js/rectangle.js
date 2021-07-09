@@ -129,3 +129,5 @@ red.addEventListener("focus", function () {
 dark.addEventListener("focus", function () {
   document.body.className = "dark";
 });
+
+// CODE TO CHANGE THEMES ENDS
